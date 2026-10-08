@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Vargas & Asociados{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; }
+        header { background-color: #1a252f; color: white; padding: 15px 30px; }
+        nav a { color: white; margin-right: 20px; text-decoration: none; font-weight: bold; }
+        .container { padding: 30px; max-width: 1000px; margin: auto; background: white; min-height: 80vh; }
+        footer { background-color: #1a252f; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #2c3e50; color: white; }
+        .btn { padding: 6px 12px; background-color: #27ae60; color: white; text-decoration: none; border-radius: 4px; border: none; cursor: pointer; }
+        .btn-danger { background-color: #c0392b; }
+        .btn-info { background-color: #2980b9; }
+        .alert { padding: 10px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; margin-bottom: 15px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Vargas & Asociados - Portal Abogados</h2>
+        <nav>
+            <a href="{% url 'lista_clientes' %}">Clientes</a>
+            <a href="{% url 'lista_casos' %}">Casos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block contenido %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Vargas & Asociados - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

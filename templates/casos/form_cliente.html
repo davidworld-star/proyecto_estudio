@@ -1,0 +1,13 @@
+{% extends 'casos/base.html' %}
+{% block contenido %}
+<h2>{% if cliente %}Editar{% else %}Nuevo{% endif %} Cliente</h2>
+<form method="POST">
+    {% csrf_token %}
+    <p><label>Nombres:</label><br><input type="text" name="nombres" value="{{ cliente.nombres|default:'' }}" required></p>
+    <p><label>Documento (DNI/RUC):</label><br><input type="text" name="documento" value="{{ cliente.documento|default:'' }}" required></p>
+    <p><label>Teléfono:</label><br><input type="text" name="telefono" value="{{ cliente.telefono|default:'' }}" required></p>
+    <p><label>Correo:</label><br><input type="email" name="correo" value="{{ cliente.correo|default:'' }}" required></p>
+    <button type="submit" class="btn">Guardar</button>
+    <a href="{% url 'lista_clientes' %}" class="btn btn-danger">Cancelar</a>
+</form>
+{% endblock %}
